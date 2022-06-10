@@ -16,115 +16,137 @@
     <main>
       <h2>Primeiro, seu prato</h2>
       <div class="prato-principal">
-        <div class="item click">
+        <div class="item sushi" onclick="select('sushi')">
           <img src="assets/Sushizinho.jpg" alt="sushi" />
           <div>
             <h3>Sushi</h3>
             <p>Sushi delícia</p>
             <h4>R$ 29,99</h4>
           </div>
+          <ion-icon name="checkmark-circle"></ion-icon>
         </div>
-        <div class="item">
+        <div class="item ramen" onclick="select('ramen')">
           <img src="assets/ramenzinho.jpg" alt="ramen" />
           <div>
             <h3>Ichiraku Ramen</h3>
             <p>Você vai entender o vício do Naruto</p>
             <h4>R$ 24,99</h4>
           </div>
+          <ion-icon name="checkmark-circle"></ion-icon>
         </div>
-        <div class="item">
+        <div class="item yakissoba" onclick="select('yakissoba')">
           <img src="assets/yakissoba.jpg" alt="yakissoba" />
           <div>
             <h3>Yakissoba</h3>
             <p>O verdadeiro, nada de miojo</p>
             <h4>R$ 19,99</h4>
           </div>
+          <ion-icon name="checkmark-circle"></ion-icon>
         </div>
-        <div class="item">
+        <div class="item churrasco" onclick="select('churrasco')">
           <img src="assets/churrascovegano.png" alt="churrascovegano" />
           <div>
             <h3>Churrasco Vegano</h3>
             <p>É... churrasco sem carne, nada contra</p>
             <h4>R$ 9,99</h4>
           </div>
+          <ion-icon name="checkmark-circle"></ion-icon>
         </div>
       </div>
       <h2>Agora, sua bebida</h2>
       <div class="bebida">
-        <div class="item">
+        <div class="item soda" onclick="select('soda')">
           <img src="assets/sodaitaliana.jpg" alt="sodaitaliana" />
           <div>
             <h3>Soda Italiana</h3>
             <p>Na Itália é só soda</p>
             <h4>R$ 9,99</h4>
           </div>
+          <ion-icon name="checkmark-circle"></ion-icon>
         </div>
-        <div class="item">
+        <div class="item cha" onclick="select('cha')">
           <img src="assets/chagelado.jpg" alt="chagelado" />
           <div>
             <h3>Chá Gelado</h3>
             <p>É muito bom</p>
             <h4>R$ 8,99</h4>
           </div>
+          <ion-icon name="checkmark-circle"></ion-icon>
         </div>
-        <div class="item">
+        <div class="item sake" onclick="select('sake')">
           <img src="assets/sake.jpg" alt="sake" />
           <div>
             <h3>Sake +18</h3>
             <p>Para experiencia full japão</p>
             <h4>R$ 14,99</h4>
           </div>
+          <ion-icon name="checkmark-circle"></ion-icon>
         </div>
-        <div class="item">
+        <div class="item agua" onclick="select('agua')">
           <img src="assets/aguacomgas.jpg" alt="aguacomgas" />
           <div>
             <h3>Água com gás</h3>
             <p>Sério, quem toma isso?</p>
             <h4>R$ 2,99</h4>
           </div>
+          <ion-icon name="checkmark-circle"></ion-icon>
         </div>
       </div>
       <h2>Por fim, sua sobremesa</h2>
       <div class="sobremesa">
-        <div class="item">
+        <div class="item petit" onclick="select('petit')">
           <img src="assets/petitgateau.jpg" alt="petitgateau" />
           <div>
             <h3>Petit Gateau</h3>
             <p>O preferido da esposa</p>
             <h4>R$ 8,99</h4>
           </div>
+          <ion-icon name="checkmark-circle"></ion-icon>
         </div>
-        <div class="item">
+        <div class="item sushidoce" onclick="select('sushidoce')">
           <img src="assets/sushidoce.jpg" alt="sushidoce" />
           <div>
             <h3>Sushi Doce</h3>
             <p>Japoneses ficam louco</p>
             <h4>R$ 9,99</h4>
           </div>
+          <ion-icon name="checkmark-circle"></ion-icon>
         </div>
-        <div class="item">
+        <div class="item sorvete" onclick="select('sorvete')">
           <img src="assets/sorvete.jpg" alt="sorvete" />
           <div>
-            <h3>Sorvete Misto</h3>
+            <h3>Sorvete Napolitano</h3>
             <p>Talvez chegue derretido</p>
             <h4>R$ 5,99</h4>
           </div>
+          <ion-icon name="checkmark-circle"></ion-icon>
         </div>
-        <div class="item">
+        <div class="item dango" onclick="select('dango')">
           <img src="assets/dango.jpg" alt="dango" />
           <div>
             <h3>Dango</h3>
             <p>Nunca comi mas tenho vontade</p>
             <h4>R$ 7,99</h4>
           </div>
+          <ion-icon name="checkmark-circle"></ion-icon>
         </div>
       </div>
     </main>
     <footer>
-      <button>
+      <button class="not-ready show">
         Selecione os 3 itens <br />
         para fechar o pedido
       </button>
+      <button class="ready" onclick="sendOrder()">Fechar pedido</button>
     </footer>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+    <script src="script.js"></script>
   </body>
 </html>
