@@ -45,9 +45,9 @@ header h3{
   margin-left: 20px;
 }
 
-/* ==================== MAIN ==================== */
+/* ==================== CONTAINER ==================== */
 
-main{
+.container{
   width: 100%;
   margin: 120px auto 100px auto;
 }
@@ -58,7 +58,7 @@ h2{
   margin-left: 20px;
 }
 
-main > div {
+.container > div {
   width: 100%;
   display: flex;
   overflow-x: auto;
@@ -92,6 +92,7 @@ main > div {
 img{
   width: 145px;
   height: 90px;
+  object-fit: cover;
   border-radius: 5px;
 }
 
@@ -120,7 +121,7 @@ p{
 h4{
   color: black;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 ion-icon{
@@ -134,6 +135,84 @@ ion-icon{
 
 .check{
   display: initial;
+}
+
+/* ==================== FINAL-BOX ==================== */
+
+.hide-page{
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, .9);
+
+}
+
+
+.final-box{
+  width: 350px;
+  height: 400px;
+  color: white;
+  background-color: #50D074;
+  border-radius: 9px;
+  position: fixed;
+  left: calc(50% - 175px);
+  top: calc(50% - 200px);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+}
+
+.final-box-show{
+  display: flex;
+}
+
+.final-box > div{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 50px;
+}
+
+.final-box h3{
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.final-box p{
+  color: white;
+  font-size: 22px;
+  font-size: 400;
+}
+
+.final-box button{
+  font-size: 22px;
+  font-weight: 700;
+  width: 300px;
+  height: 50px;
+  background-color: white;
+  color: #50D074;
+  border: none;
+  border-radius: 50px;
+}
+
+.final-box button:hover{
+  cursor: pointer;
+}
+
+.final-box h4{
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+}
+
+.final-box h4:hover{
+  cursor: pointer;
 }
 
 /* ==================== FOOTER ==================== */
@@ -183,4 +262,21 @@ footer{
 
 .show{
   display: initial;
+}
+
+@media (min-width: 780px){
+
+body{
+  width: 780px;
+  margin: auto;
+}
+
+h1{
+  margin-left: calc(50% - 370px);
+}
+
+header h3{
+  margin-left: calc(50% - 370px);
+}
+
 }

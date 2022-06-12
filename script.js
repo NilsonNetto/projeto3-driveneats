@@ -76,11 +76,17 @@ function finalizar() {
     confirmButton.classList.add('show')
     let waitingButton = document.querySelector('.not-ready')
     waitingButton.classList.remove('show')
-    calcularValor()
   }
 }
 
-function calcularValor() {
+function confirmationBox() {
+  document.querySelector('.selected-food').innerHTML = selectedFood
+  document.querySelector('.selected-food-price').innerHTML = selectedFoodPrice
+  document.querySelector('.selected-drink').innerHTML = selectedDrink
+  document.querySelector('.selected-drink-price').innerHTML = selectedDrinkPrice
+  document.querySelector('.selected-dessert').innerHTML = selectedDessert
+  document.querySelector('.selected-dessert-price').innerHTML =
+    selectedDessertPrice
   foodPrice = selectedFoodPrice.slice(2)
   foodPrice = foodPrice.replace(',', '.')
   foodPrice = Number(foodPrice)
@@ -92,13 +98,30 @@ function calcularValor() {
   dessertPrice = Number(dessertPrice)
   finalPrice = foodPrice + drinkPrice + dessertPrice
   finalPrice = finalPrice.toFixed(2)
-  console.log(finalPrice)
   finalPrice = finalPrice.replace('.', ',')
+  document.querySelector('.total-price').innerHTML = `R$ ${finalPrice}`
+  let showConfirmation = document.querySelector('.final-box')
+  showConfirmation.classList.add('final-box-show')
+  let hidePage = document.querySelector('.hide-page')
+  hidePage.classList.add('show')
+}
+
+function cancel() {
+  let showConfirmation = document.querySelector('.final-box')
+  showConfirmation.classList.remove('final-box-show')
+  let hidePage = document.querySelector('.hide-page')
+  hidePage.classList.remove('show')
 }
 
 function sendOrder() {
-  client = prompt('Qual o seu nome?')
-  adress = prompt('Qual o endereço de entrega?')
+  let client = ''
+  let adress = ''
+  while (client === '' || client === null) {
+    client = prompt('Qual o seu nome?')
+  }
+  while (adress === '' || adress === null) {
+    adress = prompt('Qual o endereço de entrega?')
+  }
   let message = `Olá, gostaria de fazer o pedido: \n- Prato: ${selectedFood}\n- Bebida: ${selectedDrink}\n- Sobremesa: ${selectedDessert}\nTotal: R$ ${finalPrice}\n\nNome: ${client}\nEndereço: ${adress}`
   let finalMessage = encodeURIComponent(message)
   window.open('https://wa.me/5545999325655?text=' + finalMessage)
