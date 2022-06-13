@@ -148,7 +148,6 @@ ion-icon{
   width: 100%;
   height: 100%;
   background-color: rgba(255, 255, 255, .9);
-
 }
 
 
@@ -166,6 +165,7 @@ ion-icon{
   align-items: center;
   justify-content: space-between;
   padding: 25px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
 }
 
 .final-box-show{
@@ -212,6 +212,57 @@ ion-icon{
 }
 
 .final-box h4:hover{
+  cursor: pointer;
+}
+
+/* ==================== NOVO PEDIDO ==================== */
+
+.order-sent{
+  width: 350px;
+  height: 300px;
+  color: white;
+  background-color: #50D074;
+  border-radius: 9px;
+  position: fixed;
+  left: calc(50% - 175px);
+  top: calc(50% - 100px);
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 25px;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.25);
+}
+
+.order-sent-show{
+  display: flex;
+}
+
+.order-sent h3{
+  text-align: center;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.order-sent p{
+  text-align: center;
+  color: white;
+  font-size: 22px;
+  font-size: 400;
+}
+
+.order-sent button{
+  font-size: 22px;
+  font-weight: 700;
+  width: 300px;
+  height: 50px;
+  background-color: white;
+  color: #50D074;
+  border: none;
+  border-radius: 50px;
+}
+
+.order-sent button:hover{
   cursor: pointer;
 }
 

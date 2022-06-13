@@ -31,23 +31,50 @@ function selectFood(element) {
 }
 
 function selectDrink(element) {
-  const clickDrink = document.querySelector('.drink')
-  if (clickDrink !== null) {
-    clickDrink.classList.remove('click')
-    clickDrink.classList.remove('drink')
+  if (element.classList.contains('alcool')) {
+    idade = prompt('Qual é a sua idade?')
+    if (idade < 18) {
+      alert(
+        'É proibida a venda de bebidas alcoolicas para menores de 18 anos \nFavor selecionar outro item'
+      )
+    } else {
+      const clickDrink = document.querySelector('.drink')
+      if (clickDrink !== null) {
+        clickDrink.classList.remove('click')
+        clickDrink.classList.remove('drink')
+      }
+      const clickCheck = document.querySelector('.checkDrink')
+      if (clickCheck !== null) {
+        clickCheck.classList.remove('check')
+        clickCheck.classList.remove('checkDrink')
+      }
+      selectedDrink = element.querySelector('h3').innerHTML
+      selectedDrinkPrice = element.querySelector('h4').innerHTML
+      element.classList.add('click')
+      element.classList.add('drink')
+      element.querySelector('ion-icon').classList.add('check')
+      element.querySelector('ion-icon').classList.add('checkDrink')
+      finalizar()
+    }
+  } else {
+    const clickDrink = document.querySelector('.drink')
+    if (clickDrink !== null) {
+      clickDrink.classList.remove('click')
+      clickDrink.classList.remove('drink')
+    }
+    const clickCheck = document.querySelector('.checkDrink')
+    if (clickCheck !== null) {
+      clickCheck.classList.remove('check')
+      clickCheck.classList.remove('checkDrink')
+    }
+    selectedDrink = element.querySelector('h3').innerHTML
+    selectedDrinkPrice = element.querySelector('h4').innerHTML
+    element.classList.add('click')
+    element.classList.add('drink')
+    element.querySelector('ion-icon').classList.add('check')
+    element.querySelector('ion-icon').classList.add('checkDrink')
+    finalizar()
   }
-  const clickCheck = document.querySelector('.checkDrink')
-  if (clickCheck !== null) {
-    clickCheck.classList.remove('check')
-    clickCheck.classList.remove('checkDrink')
-  }
-  selectedDrink = element.querySelector('h3').innerHTML
-  selectedDrinkPrice = element.querySelector('h4').innerHTML
-  element.classList.add('click')
-  element.classList.add('drink')
-  element.querySelector('ion-icon').classList.add('check')
-  element.querySelector('ion-icon').classList.add('checkDrink')
-  finalizar()
 }
 
 function selectDessert(element) {
@@ -125,4 +152,15 @@ function sendOrder() {
   let message = `Olá, gostaria de fazer o pedido: \n- Prato: ${selectedFood}\n- Bebida: ${selectedDrink}\n- Sobremesa: ${selectedDessert}\nTotal: R$ ${finalPrice}\n\nNome: ${client}\nEndereço: ${adress}`
   let finalMessage = encodeURIComponent(message)
   window.open('https://wa.me/5545999325655?text=' + finalMessage)
+  let showConfirmation = document.querySelector('.final-box')
+  showConfirmation.classList.remove('final-box-show')
+  let sentOrder = document.querySelector('.order-sent')
+  sentOrder.classList.add('order-sent-show')
+}
+
+function newOrder() {
+  let sentOrder = document.querySelector('.order-sent')
+  sentOrder.classList.remove('order-sent-show')
+  let hidePage = document.querySelector('.hide-page')
+  hidePage.classList.remove('show')
 }
