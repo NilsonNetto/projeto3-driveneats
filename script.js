@@ -32,7 +32,10 @@ function selectFood(element) {
 
 function selectDrink(element) {
   if (element.classList.contains('alcool')) {
-    idade = prompt('Qual é a sua idade?')
+    let idade
+    while (isNaN(idade)) {
+      idade = prompt('Qual é a sua idade? (somente números)')
+    }
     if (idade < 18) {
       alert(
         'É proibida a venda de bebidas alcoolicas para menores de 18 anos \nFavor selecionar outro item'
